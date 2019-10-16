@@ -36,7 +36,7 @@ CREATE TABLE `user` (
   KEY `user_role_idx` (`role_id`),
   CONSTRAINT `user_accounr` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`),
   CONSTRAINT `user_role` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
