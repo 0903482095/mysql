@@ -26,7 +26,7 @@ CREATE TABLE `socialinfo` (
   `provider_user_id` varchar(100) NOT NULL,
   `provider_id` varchar(45) NOT NULL,
   UNIQUE KEY `provider_user_id_UNIQUE` (`provider_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

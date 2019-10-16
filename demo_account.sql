@@ -31,7 +31,7 @@ CREATE TABLE `account` (
   UNIQUE KEY `username_UNIQUE` (`username`),
   KEY `account_social_idx` (`social_id`),
   CONSTRAINT `account_social` FOREIGN KEY (`social_id`) REFERENCES `socialinfo` (`provider_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
