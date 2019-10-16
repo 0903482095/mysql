@@ -31,7 +31,7 @@ CREATE TABLE `account` (
   UNIQUE KEY `username_UNIQUE` (`username`),
   KEY `account_social_idx` (`social_id`),
   CONSTRAINT `account_social` FOREIGN KEY (`social_id`) REFERENCES `socialinfo` (`provider_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,6 @@ CREATE TABLE `account` (
 
 LOCK TABLES `account` WRITE;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
-INSERT INTO `account` VALUES (43,'hoangnt@gmail.com','$2a$10$cM34.bfw76DnxmheG2tQBeaeDm5m5zP4rb75VTnI6bRfyFwoiNDCi',NULL),(44,NULL,NULL,'aaaaaaaaaa');
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-16 15:20:27
+-- Dump completed on 2019-10-16 16:31:19

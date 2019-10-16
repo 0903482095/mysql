@@ -24,19 +24,20 @@ DROP TABLE IF EXISTS `user`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(45) DEFAULT NULL,
-  `full_name` varchar(45) DEFAULT NULL,
+  `email` varchar(45) NOT NULL,
+  `full_name` varchar(45) NOT NULL,
   `image_url` varchar(45) DEFAULT NULL,
   `gender` varchar(45) DEFAULT NULL,
   `phone` varchar(45) DEFAULT NULL,
-  `account_id` int(11) DEFAULT NULL,
-  `role_id` int(11) DEFAULT NULL,
+  `account_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `user_accounr_idx` (`account_id`),
   KEY `user_role_idx` (`role_id`),
   CONSTRAINT `user_accounr` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`),
   CONSTRAINT `user_role` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +46,6 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (41,'hoangnt@gmail.com','hoangnt',NULL,'nam','0903482099',43,2),(42,'hoang_nt@gmail.com','hoang_nt','aaaaaaaa',NULL,NULL,44,3);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-16 15:20:27
+-- Dump completed on 2019-10-16 16:31:19
