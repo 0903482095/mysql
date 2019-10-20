@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.17, for macos10.14 (x86_64)
+-- MySQL dump 10.16  Distrib 10.1.38-MariaDB, for Win64 (AMD64)
 --
 -- Host: 127.0.0.1    Database: demo
 -- ------------------------------------------------------
--- Server version	8.0.17
+-- Server version	10.1.38-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,23 +21,22 @@
 
 DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(45) NOT NULL,
-  `full_name` varchar(45) NOT NULL,
-  `image_url` varchar(45) DEFAULT NULL,
-  `gender` varchar(45) DEFAULT NULL,
-  `phone` varchar(45) DEFAULT NULL,
-  `account_id` int(11) NOT NULL,
-  `role_id` int(11) NOT NULL,
+  `email` varchar(45) CHARACTER SET latin1 COLLATE latin1_bin DEFAULT NULL,
+  `full_name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_url` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `account_id` int(11) DEFAULT NULL,
+  `role_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email_UNIQUE` (`email`),
-  KEY `user_accounr_idx` (`account_id`),
-  KEY `user_role_idx` (`role_id`),
-  CONSTRAINT `user_accounr` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`),
-  CONSTRAINT `user_role` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  KEY `user_ibfk_1` (`account_id`),
+  KEY `user_ibfk_2` (`role_id`),
+  CONSTRAINT `user_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `user_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,6 +45,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (25,'hoang_nt@gmail.com','instagram','aaaaaaaaaaaaaaaaaaaa',NULL,NULL,26,3),(26,'hoang_nt@gmail.com','instagram','aaaaaaaaaaaaaaaaaaaa',NULL,NULL,27,3),(27,'torihoang@gmail.com','Nguyen Tri Hoang',NULL,'nam','0337983068',28,2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-16 16:31:19
+-- Dump completed on 2019-10-20 19:46:41

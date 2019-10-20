@@ -16,27 +16,39 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `role`
+-- Table structure for table `address`
 --
 
-DROP TABLE IF EXISTS `role`;
+DROP TABLE IF EXISTS `address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `role` (
+CREATE TABLE `address` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+  `specific_address` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `matp` varchar(5) CHARACTER SET utf8 NOT NULL,
+  `maqh` varchar(5) CHARACTER SET utf8 NOT NULL,
+  `xaid` varchar(5) CHARACTER SET utf8 NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `address_maqh` (`maqh`),
+  KEY `address_matp` (`matp`),
+  KEY `address_user` (`user_id`),
+  KEY `address_xaid` (`xaid`),
+  CONSTRAINT `address_maqh` FOREIGN KEY (`maqh`) REFERENCES `devvn_quanhuyen` (`maqh`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `address_matp` FOREIGN KEY (`matp`) REFERENCES `devvn_tinhthanhpho` (`matp`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `address_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `address_xaid` FOREIGN KEY (`xaid`) REFERENCES `devvn_xaphuongthitran` (`xaid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `role`
+-- Dumping data for table `address`
 --
 
-LOCK TABLES `role` WRITE;
-/*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` VALUES (1,'ROLE_ADMIN'),(2,'ROLE_MANAGER'),(3,'ROLE_USER');
-/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+LOCK TABLES `address` WRITE;
+/*!40000 ALTER TABLE `address` DISABLE KEYS */;
+INSERT INTO `address` VALUES (10,'so 1','01','001','00001',27);
+/*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
