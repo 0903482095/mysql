@@ -25,11 +25,12 @@ DROP TABLE IF EXISTS `shift`;
 CREATE TABLE `shift` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `cash` float DEFAULT NULL,
   `stadium_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `shift_stadium` (`stadium_id`),
   CONSTRAINT `shift_stadium` FOREIGN KEY (`stadium_id`) REFERENCES `stadium` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +39,6 @@ CREATE TABLE `shift` (
 
 LOCK TABLES `shift` WRITE;
 /*!40000 ALTER TABLE `shift` DISABLE KEYS */;
-INSERT INTO `shift` VALUES (25,'ca 1',13),(26,'ca 2',13),(27,'ca 1',14),(28,'ca 2',14);
 /*!40000 ALTER TABLE `shift` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-20 19:46:41
+-- Dump completed on 2019-11-09 14:31:25

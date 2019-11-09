@@ -23,10 +23,11 @@ DROP TABLE IF EXISTS `socialinfo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `socialinfo` (
-  `provider_user_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `provider_user_id` varchar(200) NOT NULL,
   `provider_id` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`provider_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +36,7 @@ CREATE TABLE `socialinfo` (
 
 LOCK TABLES `socialinfo` WRITE;
 /*!40000 ALTER TABLE `socialinfo` DISABLE KEYS */;
-INSERT INTO `socialinfo` VALUES (111,'google'),(112,'facebook');
+INSERT INTO `socialinfo` VALUES (1,'dhsjdhsjhdjsdhjsdhsd','facebook');
 /*!40000 ALTER TABLE `socialinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-20 19:46:41
+-- Dump completed on 2019-11-09 14:31:25

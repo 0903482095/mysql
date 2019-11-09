@@ -25,11 +25,13 @@ DROP TABLE IF EXISTS `stadium`;
 CREATE TABLE `stadium` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `type` int(11) DEFAULT NULL,
+  `description` varchar(45) DEFAULT NULL,
   `address_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `stadium_address` (`address_id`),
   CONSTRAINT `stadium_address` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +40,6 @@ CREATE TABLE `stadium` (
 
 LOCK TABLES `stadium` WRITE;
 /*!40000 ALTER TABLE `stadium` DISABLE KEYS */;
-INSERT INTO `stadium` VALUES (13,'hoanghoi',10),(14,'thamhoi',10);
 /*!40000 ALTER TABLE `stadium` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-20 19:46:41
+-- Dump completed on 2019-11-09 14:31:25

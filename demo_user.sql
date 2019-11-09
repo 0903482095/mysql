@@ -26,7 +26,7 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(45) CHARACTER SET latin1 COLLATE latin1_bin DEFAULT NULL,
   `full_name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image_url` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_url` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `gender` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `phone` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `account_id` int(11) DEFAULT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE `user` (
   KEY `user_ibfk_2` (`role_id`),
   CONSTRAINT `user_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `user_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (25,'hoang_nt@gmail.com','instagram','aaaaaaaaaaaaaaaaaaaa',NULL,NULL,26,3),(26,'hoang_nt@gmail.com','instagram','aaaaaaaaaaaaaaaaaaaa',NULL,NULL,27,3),(27,'torihoang@gmail.com','Nguyen Tri Hoang',NULL,'nam','0337983068',28,2);
+INSERT INTO `user` VALUES (29,'torihoang21@gmail.com','Nguyen Tri Hoi','http://vuonxa.com:9090/resources/upload-dir/user/446469Koala.jpg','nam','0337983067',30,2),(30,'torihoang23@gmail.com','Nguyen Tri Hoang',NULL,'nam','0337983068',31,2),(31,'hoanghhh@gmail.com','hoangnguyentri','dsdhjsdhsjdhsd',NULL,NULL,32,3);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-20 19:46:41
+-- Dump completed on 2019-11-09 14:31:25

@@ -25,9 +25,12 @@ DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `specific_address` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `description` varchar(500) DEFAULT NULL,
   `matp` varchar(5) CHARACTER SET utf8 NOT NULL,
   `maqh` varchar(5) CHARACTER SET utf8 NOT NULL,
   `xaid` varchar(5) CHARACTER SET utf8 NOT NULL,
+  `latitude` double DEFAULT NULL,
+  `longitude` double DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `address_maqh` (`maqh`),
@@ -38,7 +41,7 @@ CREATE TABLE `address` (
   CONSTRAINT `address_matp` FOREIGN KEY (`matp`) REFERENCES `devvn_tinhthanhpho` (`matp`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `address_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `address_xaid` FOREIGN KEY (`xaid`) REFERENCES `devvn_xaphuongthitran` (`xaid`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +50,6 @@ CREATE TABLE `address` (
 
 LOCK TABLES `address` WRITE;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (10,'so 1','01','001','00001',27);
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-20 19:46:41
+-- Dump completed on 2019-11-09 14:31:25
