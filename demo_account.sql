@@ -30,7 +30,7 @@ CREATE TABLE `account` (
   PRIMARY KEY (`id`),
   KEY `account_ibfk_1` (`social_id`),
   CONSTRAINT `account_ibfk_1` FOREIGN KEY (`social_id`) REFERENCES `socialinfo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,6 @@ CREATE TABLE `account` (
 
 LOCK TABLES `account` WRITE;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
-INSERT INTO `account` VALUES (26,NULL,NULL,NULL),(27,NULL,NULL,NULL),(28,'torihoang@gmail.com','$2a$10$FzUdOc29fp/wPAQzDbDTEO3zkT2khAWZDYvTEpHmOPL.HjjBtb14O',NULL),(29,'torihoang20@gmail.com','$2a$10$Hqk8XHmOk5tGQZEGt2VO6.1lXqdnQQWlg.VN9I..l8.4YG.krQn4m',NULL),(30,'torihoang21@gmail.com','$2a$10$DAhx4.crwXiivO34YqwbXuw63HKE7xt1tvt6vefwHIH96lFpvcYQW',NULL),(31,'torihoang23@gmail.com','$2a$10$vb/Ue4LnpBgn6oqisuzDguE/8RA3fOmp8TfFeuaLngEgC6rYzvUci',NULL),(32,NULL,NULL,1);
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-09 14:31:22
+-- Dump completed on 2019-12-03 23:00:03

@@ -25,12 +25,14 @@ DROP TABLE IF EXISTS `shift`;
 CREATE TABLE `shift` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `time_start` varchar(45) DEFAULT NULL,
+  `time_end` varchar(45) DEFAULT NULL,
   `cash` float DEFAULT NULL,
   `stadium_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `shift_stadium` (`stadium_id`),
   CONSTRAINT `shift_stadium` FOREIGN KEY (`stadium_id`) REFERENCES `stadium` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-09 14:31:25
+-- Dump completed on 2019-12-03 23:00:04
