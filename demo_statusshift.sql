@@ -29,12 +29,13 @@ CREATE TABLE `statusshift` (
   `user_id` int(11) DEFAULT NULL,
   `date` varchar(20) DEFAULT NULL,
   `note` varchar(200) DEFAULT NULL,
+  `user_confirm` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `shift_id` (`shift_id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `statusshift_ibfk_1` FOREIGN KEY (`shift_id`) REFERENCES `shift` (`id`),
   CONSTRAINT `statusshift_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-03 23:00:04
+-- Dump completed on 2019-12-24 23:47:41

@@ -24,9 +24,9 @@ DROP TABLE IF EXISTS `address`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `address` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT NULL,
+  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `specific_address` varchar(45) CHARACTER SET utf8 NOT NULL,
-  `description` varchar(500) DEFAULT NULL,
+  `description` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `matp` varchar(5) CHARACTER SET utf8 NOT NULL,
   `maqh` varchar(5) CHARACTER SET utf8 NOT NULL,
   `xaid` varchar(5) CHARACTER SET utf8 NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `address` (
   CONSTRAINT `address_matp` FOREIGN KEY (`matp`) REFERENCES `devvn_tinhthanhpho` (`matp`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `address_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `address_xaid` FOREIGN KEY (`xaid`) REFERENCES `devvn_xaphuongthitran` (`xaid`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-03 23:00:04
+-- Dump completed on 2019-12-24 23:47:41

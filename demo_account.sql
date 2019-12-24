@@ -30,7 +30,7 @@ CREATE TABLE `account` (
   PRIMARY KEY (`id`),
   KEY `account_ibfk_1` (`social_id`),
   CONSTRAINT `account_ibfk_1` FOREIGN KEY (`social_id`) REFERENCES `socialinfo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-03 23:00:03
+-- Dump completed on 2019-12-24 23:47:41
